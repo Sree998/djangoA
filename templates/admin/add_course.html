@@ -1,0 +1,25 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+
+<body>
+  <h1 style="color:white; text-align:center; font-weight:900px;">Add CourseDetails Here.....</h1>
+  <div style="width:70% ;padding-left: 400px;padding-top: 100px;"> 
+    <form method="post" action="{% url 'add_course' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label style="color: white;">COURSE NAME: </label>
+          <input type="text" class="form-control" name="cname">
+        </div>
+        <div class="form-group">
+          <label  style="color: white;" >COURSE FEES: </label>
+          <input type="text" class="form-control" name="cfees">
+        </div>
+        <center>
+        <button type="submit">SUBMIT</button>
+        </center>
+      </form>
+    </div>
+</body>
+
+{% endblock %}

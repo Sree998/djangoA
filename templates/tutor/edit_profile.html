@@ -1,0 +1,74 @@
+{% extends 'tutor/base1.html' %}
+
+{% block content %}
+
+<body class="profile">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <center>
+        <br><br><br>
+        <center><h1 style="color:white;background-color: brown;">Edit  Details</h1></center>
+<table>
+    <tr>
+        <td><label style="color:white;">First Name</label></td>
+        <td><input type="text" name="first_name" value="{{users.user.first_name}}"></td>
+    </tr>
+    <tr>
+        <td><label style="color:white;">Last Name</label></td>
+        <td><input type="text" name="last_name" value="{{users.user.last_name}}"></td>
+    </tr>
+    <tr>
+        <td><label style="color:white;">User Name</label></td>
+        <td><input type="text" name="username" value="{{users.user.username}}"></td>
+    </tr>
+     
+    <tr>
+        <td><label style="color:white;">Password</label></td>
+        <td><input type="password" name="password" value="{{users.user.password}}"></td>
+    </tr>
+    <tr>
+        <td><label style="color:white;">Email</label></td>
+        <td><input type="email" name="email" value="{{users.user.email}}"></td>
+    </tr>
+    <tr>
+        <td><label style="color:white;">Address</label></td>
+        <td><input type="text" name="adname" value="{{users.user_address}}"></td>
+    </tr>
+    <tr>
+        <td><label style="color:white;">Mobile Number</label></td>
+        <td><input type="text" name="mname" value="{{users.user_mobile}}"></td>
+    </tr>
+    <tr>
+        
+            <td><label class="form-label" for="form3Example4c" style="color:white";>Upload Your Photo</label></td>
+            <td>
+            {% if users.user_photo %}
+            <img src="{{users.user_photo.url}}" width="100px;" height="100px;">
+            {% endif %}
+            <input type="file" name="photo" id="form3Example4c" class="form-control" accept="image/*">
+            </td>
+          
+    </tr>
+    
+    {% comment %} <tr>
+        <td><label style="color:white";>Course</td>
+        <td>
+            <select class="form-control" name="sel">
+                {% for course in courses %}
+                <option value="{{course.id}}">{{course.course_name}}</option>
+                {% endfor %}
+        </td>
+    </tr> {% endcomment %}
+    
+    <tr>
+        <td>
+        </td>
+        <td><input type="submit" value="Update"></td>
+        </tr>
+        </table>
+        </center>
+        </form>
+        </body>
+        
+
+{% endblock %}

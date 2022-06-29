@@ -1,0 +1,41 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+
+<body>
+  <div style="width:60% ;padding-left: 400px;padding-top: 100px;">
+    <form method="post" action="{% url 'edit_details' students.id %}" >
+        {% csrf_token %}
+        <div class="form-group">
+          <label style="color:white ;" >STUDENT NAME: </label>
+          <input type="text" class="form-control" name="sname" value="{{ students.student_name }}">
+        </div>
+        <div class="form-group">
+          <label style="color:white ;">ADDRESS: </label>
+          <input type="text" class="form-control" name="aname" value="{{ students.student_address }}">
+        </div>
+        <div class="form-group">
+            <label style="color:white ;">AGE: </label>
+            <input type="number" class="form-control" name="age" value="{{ students.student_age }}">
+          </div>
+          <div class="form-group">
+            <label style="color:white ;">JOINING DATE: </label>
+            <input type="date" class="form-control" name="dname" value="{{ students.join_date }}">
+          </div>
+         
+          <div class="form-group">
+            <label style="color:white ;">COURSE: </label>
+            <select name="sel">
+                {% for course in courses %}
+                <option value="{{ course.id }}">{{ course.course_name }}</option>
+                {% endfor %}
+            </select>
+            
+          </div>
+        
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+</body>
+
+{% endblock %}

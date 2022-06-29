@@ -1,0 +1,37 @@
+.home{
+    background-image: url('../images/ccccc.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signup{
+    background-image: url('../images/ooo.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login{
+    background-image: url('../images/ooo.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.admin{
+    background-image: url('../images/THEJUS.webp');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.tutor{
+    background-image: url('../images/ooo.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tr:hover{
+    background-color: rgb(50, 249, 63);
+}
